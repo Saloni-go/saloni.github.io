@@ -1,0 +1,626 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body{
+    color: #fff;  
+
+    
+    background-color: black;
+
+    /* overflow: hidden;   */
+}
+
+#video1{
+    position:fixed;
+
+    top:0;
+    left:0;
+    
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    z-index:-1; /*so that it moves video in behind*/
+   
+}
+#header{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url(IMAGES/about.png);
+    background-repeat: no-repeat;
+    background-size: 30%;
+    background-position: right;
+}
+
+.container{
+    padding: 1% 2%;
+    z-index:1;
+}
+
+nav{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    flex-wrap:wrap;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 7px 7px;
+    position: relative;
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;  /*it will remove underline. */
+    font-size: 2vw;
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0;  /*underline red will be hidden*/
+    height: 3px;
+    background: rgb(243, 147, 21);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;  /*now underline red will be visible*/
+}
+
+.header-text{
+    margin-top: 20%;
+    font-size: 4vw;
+}
+
+.header-text h1{
+    font-size: 8vw;
+    margin-top:20px;
+}
+
+.header-text h1 span{
+    color:rgb(243, 147, 21);
+}
+
+
+
+/* -------------- - ABOUT --------------*/
+
+
+#about{
+    padding: 8% 0;
+    color: #ababab;
+    background-color:rgb(9, 56, 55);
+    font-size: 1.2vw;
+}
+#toggle{
+    position: relative;
+    display:block;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: grey;
+    transition: 0.5s;
+    cursor:pointer;
+    text-align: right;
+    
+}
+#toggle .indicator{
+    position: absolute;
+    top:0;
+    left:0;
+    width:10px;
+    height:20px;
+    background: linear-gradient(to bottom, #444, #222);
+    border-radius: 58%;
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+#toggle.active .indicator{
+    left:10px;
+}
+.about-active{
+    background-color: pink !important;
+    color: brown !important;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15%;
+}
+.about-col-2{
+    flex-basis: 60%;
+}
+
+.sub-title{
+    font-size: 6vw;
+    font-weight: 600;
+    color: #fff;
+}
+
+.tab-titles{
+    display:flex;
+    margin: 2.5% 0 10%;
+}
+
+.tab-links{
+    margin-right: 20%;
+    font-size: 2vw;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links:after{
+    content: '';
+    width:0;
+    height: 10%;
+    background: rgb(243, 147, 21);
+    position: absolute;
+    left: 0;
+    bottom: -10%;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after{
+    width: 50%;
+}
+
+.tab-contents ul li{
+    list-style:none;
+    margin: 3% 0;
+}
+
+.tab-contents ul li span{
+    color: rgb(243, 147, 21);
+    font-size: 1.2vw;
+}
+
+.tab-contents{
+    display:none;  /*will hide all the tab contents*/
+}
+
+.tab-contents.active-tab{
+    display:block;  /*now block under this class will be visible*/
+}
+
+
+/*---------------------Education--------------------*/
+
+#Education{
+    padding: 30px 0;
+    background-color: blueviolet;
+}
+
+.edu-list{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.edu-list img{
+    max-width:100%;
+    margin-top: 25px;
+    height:250px;
+    display: block; /*removes ectra spacing below image*/
+    border-radius: 10px;
+    align-items: center;
+}
+
+.edu-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 1.2vw;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+}
+
+.edu-list div i{
+    font-size: 6vw;
+    margin-bottom: 20px;;
+}
+
+.edu-list div h2{
+    font-size:3vw;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.edu-list div a {
+    text-decoration:none;
+    color:#fff;
+    font-size: 15px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.edu-list div:hover{
+    background: rgb(6, 50, 59);
+    transform: translate(-10px);
+}
+.edu-list ul{
+    margin-top:20%;
+    padding: 5%;
+    list-style: none;
+    font-size: 1.4vw;
+}
+.edu-list span{
+    color:rgb(243, 147, 21);
+    font-size: 114%;
+}
+
+/*------------------Achievements----------------*/
+
+#Achievements{
+    padding: 0 0;
+    background-image:url('IMAGES/achieve1.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-color: (155,155,0,0.7);
+}
+
+.achieve-para h2{
+    margin-bottom: 15px;
+    font-size: 70px;
+    font-weight: 600;
+    color: #fff;
+    padding: 1.3%;
+}
+
+.achieve-para p{
+    margin-top: 5%;
+    padding:1.3%;
+    color: black;
+    font-size: 115%;
+}
+
+.achieve-para span{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+
+}
+
+/*-------------------------Skills-----------------*/
+#Skills{
+    padding: 50px 0;
+    background-color: grey;
+}
+
+.skill-set{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.skill-head{
+    margin-bottom: 15px;
+    font-size: 70px;
+    font-weight: 600;
+    color: #fff;
+    padding: 1.3%;
+}
+
+.skill-i{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.skill-i img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s ;
+    height: 100%;
+}
+
+.skill-desc{
+    width: 100%;
+    height: 0; /*to hide it*/
+    background: linear-gradient(rgba(0,0,0,0.6),rgb(243, 147, 21));
+    border-radius: 10px;
+    position: absolute;
+    left:0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transform: height 0.5s;
+}
+
+.skill-desc h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+
+.skill-i:hover img{
+    transform: scale(1.1);
+}
+
+.skill-i:hover .skill-desc{
+    height: 100%;
+}
+
+/*-------------------BLOGS--------------*/
+#toggle2{
+    position: relative;
+    display:block;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: grey;
+    transition: 0.5s;
+    cursor:pointer;
+    text-align: right;
+    
+}
+#toggle2 .indicator2{
+    position: absolute;
+    top:0;
+    left:0;
+    width:10px;
+    height:20px;
+    background: linear-gradient(to bottom, #444, #222);
+    border-radius: 58%;
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+#toggle2.active .indicator2{
+    left:10px;
+}
+.blogs-active{
+    background-color: rgb(225, 225, 127)!important;
+    color: brown !important;
+}
+#blogs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(19, 104, 104);
+    padding:40px;
+    border-bottom: 1px solid rgba(0,0,0,0.6);
+    margin-bottom: 5%;
+    padding-bottom: 15%;
+}
+#blogs h3{
+    font-size: 30px;
+}
+.blog-head{
+    margin-bottom: 15px;
+    font-size: 70px;
+    font-weight: 600;
+    color: #fff;
+    padding: 1.3%;
+    text-align: center;
+}
+
+.Blogs-set{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    flex-wrap: wrap;
+}
+
+.blog-1{
+    width:30%;
+    background-color: #ffffff;
+    border: 1 px solid #ececec;
+    margin: 20px;
+    height:350px;
+}
+
+.blog-img{
+    width:100%;
+    height: 100%;
+}
+
+.blog-img img{
+    width:100%;
+    height: 100%;
+    object-fit: curve;
+    object-position: center;
+    
+}
+.blog-text{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.blog-text span{
+    color:aquamarine;
+    font-size: 0.9rem;
+}
+.blog-text .blog-link{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #272727;
+}
+.blog-text .blog-link:hover{
+    color:red;
+    transition: all ease 0.3s;
+}
+/*--------------------CONTACTS----------*/
+
+.cont-1{
+    flex-basis: 35%;
+}
+.cont-2{
+    flex-basis: 60%;
+}
+
+.cont-1 p{
+    margin-top: 30px;
+    color: rgb(243, 147, 21);
+}
+
+.cont-1 p i{
+    color: rgb(243, 147, 21);
+}
+
+.cont-1 p a{
+    text-decoration: none;
+    color: rgb(243, 147, 21);
+}
+
+.cont-1 p i{
+    color: rgb(243, 147, 21);
+    margin-right: 15px;
+    font-size: 25px;
+}
+.SocialMedia{
+    margin-top: 30px;
+}
+.SocialMedia a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: rgb(151, 151, 184);
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.SocialMedia a:hover{
+    color: rgb(243, 147, 21);
+    transform: translateY(-5px);  /*move up by 5 pixel*/
+
+}
+
+.resumeDownload{
+    display:inline-block;
+    margin: 50px auto; /*50px from top and bottom, and left right auto, eans it will be in centre*/
+    width: fit-content;
+    border: 1px solid rgb(243, 147, 21) ;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: purple;
+    transition:background 0.5s;
+    
+}
+.resumeDownload:hover{
+    background: rgb(243, 147, 21);
+}
+
+.cont-2{
+    width:100%;
+}
+form input, form textarea{
+    width:100%;
+    border:0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin:15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+
+}
+
+.radio{
+    display: inline-block;
+    margin-right: 20px;
+}
+.radio input[type="radio"]{
+    vertical-align: middle;
+}
+
+/*-----------------Small screen--------------*/
+@media screen and (max-width: 768px) {
+    .achieve-para h2 {
+        font-size: 6vw; /* Decrease the font size of the achievement section heading */
+    }
+    .achieve-para p{
+        font-size:1.8vw;
+    }
+
+    .edu-list, .edu-list div {
+        width: 100%; /* Set the width of education section elements to 100% */
+    }
+
+    .edu-list img {
+        height: auto; /* Allow the image height to adjust proportionally */
+    }
+
+    .skill-head{
+        font-size: 6vw;
+    }
+    .blog-head{
+        font-size:6vw;
+    }
+    #blogs h3{
+        font-size:3.5vw;
+    }
+    .blog-text{
+        font-size:1.5vw;
+        margin-top:3%;
+        margin-bottom: 3%;
+    }
+    .blog-img{
+        width:100%;
+        height: 100%;
+    }
+
+    .blog-img img{
+    width:100%;
+    height: 100%;
+    object-fit: curve;
+    object-position: center;
+    
+    }
+    #blogs{
+        padding-bottom: 10%;
+    }
+    .blog-1{
+        width:90%;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    .cont-1,.cont-2{
+        flex-basis: 100%; /*so that both sections occupy full width on small screen*/
+    }
+    .const-1 p i{
+        font-size:20px;
+    }
+    .SocialMedia a{
+        font-size: 20px;
+    }
+    .resumeDownload{
+        width:100%;
+        margin: 20px auto;
+    }
+    form input, form textarea{
+        width:100%;
+    }
+} 

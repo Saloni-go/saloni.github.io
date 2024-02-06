@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+  
+    <title>BLOG-1</title>
+    <script src="https://kit.fontawesome.com/c894742518.js" crossorigin="anonymous"></script> <!--fontawesome.com -->
+
+</head>
+<body>
+    <h1>JAMMU AND KASHMIR</h1>
+    <p> hi there!</p>
+    <div class="comments">
+        <div class="row">
+            <h3>Comments</h3>
+            <ol><li>
+           <div class="comm">
+                <p>"Jammu and Kashmir, often referred to as 'Paradise on Earth,' truly lives up to its name. From the snow-capped peaks of the Himalayas to the serene valleys of Kashmir, every corner of this region is a sight to behold. The lush greenery, crystal-clear lakes, and breathtaking vistas make it a haven for nature lovers and adventurers alike."</p>
+            </div></li><li>
+            <div class="comm">
+                <p>Exploring the rich cultural heritage of Jammu and Kashmir is a journey back in time. The ancient temples of Jammu, the magnificent Mughal gardens of Srinagar, and the centuries-old shrines nestled in the Himalayas all stand as testaments to the region's rich history and religious diversity.</p>
+            </div></li><li>
+            <div class="comm">
+                <p>The warmth and hospitality of the people of Jammu and Kashmir leave a lasting impression on every visitor. Whether savoring the traditional Kashmiri Wazwan cuisine or experiencing the vibrant festivities of the region, one cannot help but feel welcomed with open arms and genuine kindness.</p>
+            </div></li><li>
+            <div class="comm">
+               <p>Jammu and Kashmir's tumultuous history adds layers of complexity to its beauty. Despite facing challenges, the resilience and spirit of its people shine through, inspiring hope and unity. It's a land of contrasts, where tranquility coexists with turmoil, creating a unique and unforgettable experience for all who venture here.</p>
+            </div></li>
+            </ol>
+        </div>
+    </div>
+    <div class="like">
+        <button id="likeButton" class="btn1"><i class="far fa-thumbs-up"></i> Like</button>
+        <span id="likeCount">0</span>
+    </div>
+
+    <script>
+        // Get the like button and like count elements
+        const likeButton = document.getElementById('likeButton');
+        const likeCount = document.getElementById('likeCount');
+
+        let count = parseInt(localStorage.getItem('likeCount'))  || 0;
+        likeCount.textContent=count;
+        // Add event listener to the like button
+        likeButton.addEventListener('click', function() {
+            // Increment the count and update the like count text
+            count++;
+            likeCount.textContent = count;
+            localStorage.setItem('likeCount',count);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <title>BLOG-2</title>
+    <script src="https://kit.fontawesome.com/c894742518.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Rajasthan</h1>
+    <p> hi there!</p>
+    <div class="comments">
+        <div class="row">
+            <h3>Comments</h3>
+            <ol>
+                <li>
+                    <div class="comm">
+                        <p>"The mesmerizing landscapes of Rajasthan never fail to captivate me. From the majestic forts standing tall against the horizon to the vibrant colors of the bustling markets, every corner of Rajasthan tells a tale of its rich history and cultural heritage.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="comm">
+                        <p> Exploring the narrow alleys of Jaipur's Pink City, wandering through the golden sands of the Thar Desert, or witnessing the surreal beauty of the Udaipur lakes – Rajasthan offers a tapestry of experiences that leave an indelible mark on the soul. </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="comm">
+                        <p>Each visit to this enchanting land is a journey through time, filled with warmth, hospitality, and countless stories waiting to be discovered.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="comm">
+                        <p>The spirit of Rajasthan thrives in its age-old customs, celebrated festivals like Diwali, Holi, and the grandeur of events like the Pushkar Camel Fair. Each encounter with Rajasthan unveils layers of its rich tapestry, leaving you spellbound and yearning for more</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="like">
+        <button id="likeButton" class="btn2"><i class="far fa-thumbs-up"></i> Like</button>
+        <span id="likecount">0</span>
+    </div>
+
+    <script>
+        const btn2 = document.getElementById('likeButton'); // Corrected selector
+        const likecount = document.getElementById('likecount');
+    
+        let count2 = localStorage.getItem('likecount') || 0;
+        likecount.textContent = count2;
+        btn2.addEventListener('click', function() { 
+            count2++;
+            likecount.textContent = count2;
+            localStorage.setItem('likecount', count2);
+        });
+    </script>
+</body>
